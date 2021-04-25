@@ -31,7 +31,17 @@
                     <input type="text" ng-model="reply.payload" ng-change="makeDirty()">
                 </span>
             </div>
-            <div class="delete">
+            <div class="ng-class:{disabled: reply.content_type=='user_email'}; cell" dnd-nodrag>
+              <span ng-if="reply.content_type=='text'">
+                  <input type="text" ng-model="reply.payload" ng-change="makeDirty()">
+              </span>
+          </div>
+          <div class="ng-class:{disabled: reply.content_type=='user_phone_number'}; cell" dnd-nodrag>
+            <span ng-if="reply.content_type=='text'">
+                <input type="text" ng-model="reply.payload" ng-change="makeDirty()">
+            </span>
+        </div>
+        <div class="delete">
                 <button class="delete" ng-click="removeQuickReply(ui.outgoing_message,$index);"></button>
             </div>
         </li>

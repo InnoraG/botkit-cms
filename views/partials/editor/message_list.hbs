@@ -245,7 +245,9 @@
             <div ng-if="line.quick_replies" class="quick_replies">
                 <div class="quick_reply" ng-repeat="reply in line.quick_replies">
                     <span ng-if="reply.content_type == 'location'">Location</span>
-                    <span ng-if="reply.content_type != 'location'">{% reply.title %}</span>
+                    <span ng-if="reply.content_type == 'user_email'">Email</span>
+                    <span ng-if="reply.content_type == 'user_phone_number'">Phone</span>
+                    <span ng-if="reply.content_type != 'user_phone_number' && reply.content_type != 'user_email' && reply.content_type != 'location'">{% reply.title %}</span>
                 </div>
             </div>
 

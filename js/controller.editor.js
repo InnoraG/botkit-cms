@@ -1573,6 +1573,14 @@ app.controller('scriptEditor', ['$scope', '$cookies', '$sce', 'sdk', '$location'
             msg.quick_replies.push({
                 content_type: 'location'
             });
+        } else if (type == 'user_email') {
+            msg.quick_replies.push({
+                content_type: 'user_email'
+            });
+        } else if (type == 'user_phone_number') {
+            msg.quick_replies.push({
+                content_type: 'user_phone_number'
+            });
         }
 
         $scope.makeDirty();
